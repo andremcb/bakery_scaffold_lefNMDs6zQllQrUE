@@ -101,7 +101,7 @@ class AssessmentTestCases(unittest.TestCase):
     ):
         self.driver.get(self._get_url())
         wait = WebDriverWait(self.driver, 20)
-        self.driver.save_screenshot('screenshot.png')
+        print(self.driver.get_screenshot_as_base64())
         elem = wait.until(EC.presence_of_element_located((By.ID, self._get_button_id())))
         elem.click()
 
