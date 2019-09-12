@@ -101,7 +101,6 @@ class AssessmentTestCases(unittest.TestCase):
     ):
         self.driver.get(self._get_url())
         wait = WebDriverWait(self.driver, 20)
-        print(self.driver.get_screenshot_as_base64())
         elem = wait.until(EC.presence_of_element_located((By.ID, self._get_button_id())))
         elem.click()
 
@@ -114,7 +113,7 @@ class AssessmentTestCases(unittest.TestCase):
 
         try:
             zip_elem = self.driver.find_element_by_id('billingPostalCode')
-        except NoSuchElementException:
+        except:
             zip_elem = None
 
         email_elem.send_keys("assessment@test.com.br")
