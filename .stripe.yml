@@ -5,7 +5,7 @@ install:
    - pip install pytest
    - pip install stripe
    - pip install selenium
-   - python -m http.server 8000 &
+   - python -m http.server 4000 &
 
 script: 
  pytest test.py -v --tb=short
